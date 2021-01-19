@@ -2,21 +2,24 @@
 This is minimal script to run inference on the test images and dump JSON results with detected classes for each image
 
 ## Directory Structure:
-```console
-|-- Object_Detection_Inference_Minimal_V1.py
-|-- output.json
-|-- README.md
-|-- LICENSE
-|-- object_detection
-    |-- Inference_Graph
-    |-- Label_Map
-        |-- labelmap.pbtxt
-    |-- Test_Images
-        |-- dog.jpg
-        |-- cat.jpg
-    |-- utils
-        |-- label_map_util.py
-        |-- ops.py       
+```console       
+├── LICENSE
+├── Object_Detection_Inference_Minimal_V1.py
+├── README.md
+├── object_detection
+│   ├── Inference_Graph
+│   ├── Label_Map
+│   │   └── labelmap.pbtxt
+│   ├── Test_Images
+│   │   ├── cat.jpg
+│   │   └── dog.jpg
+│   └── utils
+│       ├── __pycache__
+│       │   ├── label_map_util.cpython-38.pyc
+│       │   └── ops.cpython-38.pyc
+│       ├── label_map_util.py
+│       └── ops.py
+└── output.json
 
 ```
 ## Setup Steps:
