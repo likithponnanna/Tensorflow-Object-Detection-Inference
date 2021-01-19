@@ -18,6 +18,7 @@ from IPython.display import display
 from obj_det.utils import ops as utils_ops
 from obj_det.utils import label_map_util
 
+# Helper function to extract id to value map from labelmap.
 def build_id_class_map(d):
     for i in d:
         tempKey = None
@@ -82,12 +83,10 @@ def show_inference(model, image_path):
     return per_image_detection
                 
                 
-
+#Load the saved model.
 print("Model being Loaded!! Please wait it will take time for the model to load.")
 detection_model = tf.saved_model.load('obj_det/Inference_Graph/saved_model')
 print("Model load completed!!")
-
-
 
 
 # patch tf1 into `utils.ops`
@@ -105,16 +104,16 @@ TEST_IMAGE_PATHS = sorted(list(PATH_TO_TEST_IMAGES_DIR.glob("*")))
 id_to_value_map = dict()
           
 build_id_class_map(category_index)
-
 final_dict = dict()
 
+# Runing inference image by by image.
 for image_path in TEST_IMAGE_PATHS:
     final_dict[str(image_path)] = show_inference(detection_model, image_path)
 
 
+# Json Print and dumping the json output file from the output dictionary.
 final_json  = json.dumps(final_dict, indent=4, sort_keys=True)
 print("Final Result: ", final_json)
-
 with open('output.json', 'w', encoding='utf-8') as f:
     json.dump(final_dict, f, ensure_ascii=False, indent=4)
 
