@@ -1,0 +1,12 @@
+{
+    "obj_det\\Test_Images\\dog.jpg": {
+        "dog": [
+            "99.92%"
+        ]    
+    },
+    "obj_det\\Test_Images\\cat.jpg": {
+        "cat": [
+            "98.88%"
+        ]
+    }
+}
