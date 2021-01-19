@@ -26,6 +26,5 @@ This is minimal script to run inference on the test images and dump JSON results
 - Run the inference script 
 ```console
 foo@bar:~$ python Object_Detection_Inference_Minimal_V1.py
-foo
 ```
 - The output is dumped into the top directory with a name output.json
